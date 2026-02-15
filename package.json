@@ -1,0 +1,30 @@
+{
+  "name": "docuextract-sdk",
+  "version": "1.0.0",
+  "description": "Official SDK for DocuExtract Gateway - Unified Document Intelligence API",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "keywords": [
+    "document",
+    "extraction",
+    "ocr",
+    "pdf",
+    "textract",
+    "azure",
+    "langextract"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "form-data": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0"
+  }
+}
