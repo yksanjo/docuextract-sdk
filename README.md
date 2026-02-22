@@ -1,107 +1,84 @@
-# DocuExtract SDK
+# docuextract-sdk
 
-Official JavaScript/TypeScript SDK for DocuExtract Gateway - Unified Document Intelligence API.
+## Detailed Description
 
-## Installation
+docuextract-sdk is maintained as an industry-grade software project with production-ready engineering practices.  
+This repository includes documented setup, quality gates, operational guidance, and governance standards so contributors can safely build, test, and ship changes with confidence.
+
+## Problem Statement
+
+Describe the user or business problem this project solves, the target users, and expected outcomes.
+
+## Solution Overview
+
+Summarize the architecture, core modules, and runtime behavior at a high level.
+
+## Key Features
+
+- Clear project scope and intended use.
+- Reproducible local development workflow.
+- Test coverage and CI quality gates.
+- Security and contribution policies.
+- Deployment-ready repository structure.
+
+## Repository Structure
+
+```text
+.
+|-- src/                  # Core implementation
+|-- tests/                # Automated test suites
+|-- docs/                 # Design notes and operational docs
+|-- .github/workflows/    # CI pipelines
+|-- README.md
+|-- LICENSE
+|-- CONTRIBUTING.md
+|-- SECURITY.md
+|-- CODE_OF_CONDUCT.md
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Git
+- Project runtime/toolchain for this repo
+
+### Local Setup
 
 ```bash
-npm install docuextract-sdk
+npm ci
+npm run lint
+npm test
+npm run build
 ```
 
-## Quick Start
+## Usage
 
-```javascript
-const DocuExtractClient = require('docuextract-sdk');
+Document primary commands, API routes, CLI examples, or UI workflows here.
 
-// Create client
-const client = new DocuExtractClient({
-  baseUrl: 'http://localhost:3000',
-  clientId: 'my-app'
-});
+## Quality Standards
 
-// Extract text from PDF
-const result = await client.extract('./invoice.pdf', {
-  documentType: 'invoice'
-});
+- CI must pass before merge.
+- Changes require tests for critical behavior.
+- Security-sensitive changes should include risk notes.
+- Keep pull requests focused and reviewable.
 
-console.log(result.extraction.text);
-```
+## Security
 
-## API Reference
+See `SECURITY.md` for responsible disclosure and handling guidelines.
 
-### `new DocuExtractClient(options)`
+## Contributing
 
-Create a new client instance.
+See `CONTRIBUTING.md` for branching, commit, and pull request expectations.
 
-**Options:**
-- `baseUrl` - Gateway URL (default: `http://localhost:3000`)
-- `apiKey` - API key for authentication
-- `clientId` - Client ID for usage tracking
+## Roadmap
 
-### `client.extract(document, options)`
+Track upcoming milestones, technical debt, and planned feature work.
 
-Extract text from a document file.
+## Support
 
-**Parameters:**
-- `document` - File path (string) or Buffer
-- `options.documentType` - Document type: `invoice`, `receipt`, `form`, `contract`, `id_document`, `generic`
-- `options.forceProvider` - Force specific provider: `langextract`, `aws`, `azure`
-
-**Returns:** Extraction result with text, pages, tables, and forms
-
-### `client.getProviders()`
-
-Get list of available providers.
-
-### `client.getPricing()`
-
-Get pricing information including volume discounts.
-
-### `client.healthCheck()`
-
-Check health status of all providers.
-
-### `client.getUsage()`
-
-Get usage statistics for the current client.
-
-### `client.getRouting(documentType)`
-
-Get routing information for a document type.
-
-## Example: Process Invoice
-
-```javascript
-const DocuExtractClient = require('docuextract-sdk');
-
-const client = new DocuExtractClient({
-  baseUrl: 'http://localhost:3000',
-  clientId: 'billing-app'
-});
-
-const result = await client.extract('./invoice.pdf', {
-  documentType: 'invoice'
-});
-
-console.log('Extracted text:', result.extraction.text);
-console.log('Tables found:', result.extraction.tables);
-console.log('Cost:', result.cost.finalCost);
-```
-
-## TypeScript Support
-
-```typescript
-import DocuExtractClient from 'docuextract-sdk';
-
-const client = new DocuExtractClient({
-  baseUrl: 'http://localhost:3000'
-});
-
-const result = await client.extract('./document.pdf', {
-  documentType: 'invoice'
-});
-```
+Open a GitHub issue for bugs, feature requests, or documentation gaps.
 
 ## License
 
-MIT
+This project is released under the MIT License.
