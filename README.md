@@ -1,5 +1,12 @@
 # docuextract-sdk
 
+Production-grade project scaffold focused on reliability, maintainability, and fast onboarding.
+
+[![CI](https://img.shields.io/github/actions/workflow/status/yksanjo/docuextract-sdk/ci.yml?branch=main&label=ci)](https://github.com/yksanjo/docuextract-sdk/actions)
+![License](https://img.shields.io/github/license/yksanjo/docuextract-sdk)
+![Last Commit](https://img.shields.io/github/last-commit/yksanjo/docuextract-sdk)
+![Repo Size](https://img.shields.io/github/repo-size/yksanjo/docuextract-sdk)
+
 ## Detailed Description
 
 docuextract-sdk is maintained as an industry-grade software project with production-ready engineering practices.  
